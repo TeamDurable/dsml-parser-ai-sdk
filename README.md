@@ -1,12 +1,12 @@
-# @durable/dsml
+# @durableai/ai-sdk-dsml-middleware
 
 Parse DeepSeek DSML tool-call markup into standard Vercel AI SDK tool calls.
 
 DeepSeek models can sometimes emit DSML tool calls as plain text instead of provider-native `tool_calls`. When that
 happens, users may see protocol markup in the assistant response and AI SDK tool execution never starts.
 
-`@durable/dsml` is a small AI SDK middleware that intercepts those leaked DSML blocks and turns them back into normal
-AI SDK `tool-call` events.
+`@durableai/ai-sdk-dsml-middleware` is a small AI SDK middleware that intercepts those leaked DSML blocks and turns them
+back into normal AI SDK `tool-call` events.
 
 ## Why This Exists
 
@@ -33,7 +33,7 @@ This package converts that markup into the same shape AI SDK expects from provid
 ## Installation
 
 ```bash
-pnpm add @durable/dsml
+pnpm add @durableai/ai-sdk-dsml-middleware
 ```
 
 You also need the AI SDK packages in your app:
@@ -48,7 +48,7 @@ Wrap the model before passing it to `generateText`, `streamText`, or an AI SDK a
 
 ```ts
 import { wrapLanguageModel } from "ai";
-import { deepseekDsmlMiddleware } from "@durable/dsml";
+import { deepseekDsmlMiddleware } from "@durableai/ai-sdk-dsml-middleware";
 
 const model = wrapLanguageModel({
 	model: yourDeepSeekModel,
@@ -109,7 +109,7 @@ When `string="true"` is present, or the attribute is omitted, the parameter is k
 AI SDK language model middleware.
 
 ```ts
-import { deepseekDsmlMiddleware } from "@durable/dsml";
+import { deepseekDsmlMiddleware } from "@durableai/ai-sdk-dsml-middleware";
 ```
 
 Use it with `wrapLanguageModel`:

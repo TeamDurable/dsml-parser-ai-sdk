@@ -1,5 +1,5 @@
 {
-	"name": "@durable/dsml",
+	"name": "@durableai/ai-sdk-dsml-middleware",
 	"version": "0.1.0",
 	"description": "AI SDK middleware for parsing DeepSeek DSML tool calls.",
 	"type": "module",
