@@ -1,0 +1,48 @@
+{
+	"name": "@durable/dsml",
+	"version": "0.1.0",
+	"description": "AI SDK middleware for parsing DeepSeek DSML tool calls.",
+	"type": "module",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TeamDurable/dsml-parser-ai-sdk.git"
+	},
+	"homepage": "https://github.com/TeamDurable/dsml-parser-ai-sdk#readme",
+	"bugs": {
+		"url": "https://github.com/TeamDurable/dsml-parser-ai-sdk/issues"
+	},
+	"packageManager": "pnpm@10.0.0",
+	"publishConfig": {
+		"access": "public"
+	},
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"build": "tsup src/index.ts --format esm --dts",
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit",
+		"check": "pnpm typecheck && pnpm test && pnpm build"
+	},
+	"peerDependencies": {
+		"@ai-sdk/provider": ">=3.0.0 <5.0.0",
+		"ai": ">=6.0.0 <8.0.0"
+	},
+	"devDependencies": {
+		"@ai-sdk/provider": "latest",
+		"ai": "latest",
+		"tsup": "latest",
+		"typescript": "latest",
+		"vitest": "latest"
+	}
+}
